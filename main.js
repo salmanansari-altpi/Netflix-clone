@@ -1,4 +1,4 @@
-// const containerInner = document.querySelector(".inner");
+const container = document.querySelectorAll(".d");
 const containerPopular = document.querySelector(".popular");
 const containerTop = document.querySelector(".top-rated");
 const containerUpcoming = document.querySelector(".upcoming");
@@ -16,7 +16,7 @@ const IMAGE_URL = `https://image.tmdb.org/t/p/w500/`;
 let popular = [];
 let upcoming = [];
 let topRated = [];
-let wishlist = []
+let wishlist = [];
 
 const fetchMovie = async (type) => {
   const res = await fetch(URL + type + KEY);
@@ -67,29 +67,46 @@ function showPopularMovie(container, arrName) {
   });
 }
 
+// ADD TO WISHLIST
+// containerPopular.addEventListener("click", async function (e) {
+//   const movie = e.target;
+//   const res = await fetch(
+//     `https://api.themoviedb.org/3/movie/${movie.alt}${KEY}`
+//   );
+//   const data = await res.json();
+//   wishlist.push(data);
+//   localStorage.setItem("wishlist", JSON.stringify(wishlist));
+// });
 
-// ADD TO WISHLIST 
-containerPopular.addEventListener('click', async function(e) {
-    const movie = e.target
-    const res = await fetch(`https://api.themoviedb.org/3/movie/${movie.alt}${KEY}`)
-    const data = await res.json()
-    wishlist.push(data)
-    localStorage.setItem('wishlist', JSON.stringify(wishlist))
-})
+// containerTop.addEventListener("click", async function (e) {
+//   const movie = e.target;
+//   const res = await fetch(
+//     `https://api.themoviedb.org/3/movie/${movie.alt}${KEY}`
+//   );
+//   const data = await res.json();
+//   wishlist.push(data);
+//   localStorage.setItem("wishlist", JSON.stringify(wishlist));
+// });
 
-containerTop.addEventListener('click', async function(e) {
-    const movie = e.target
-    const res = await fetch(`https://api.themoviedb.org/3/movie/${movie.alt}${KEY}`)
-    const data = await res.json()
-    wishlist.push(data)
-    localStorage.setItem('wishlist', JSON.stringify(wishlist))
-})
+// containerUpcoming.addEventListener("click", async function (e) {
+//   const movie = e.target;
+//   const res = await fetch(
+//     `https://api.themoviedb.org/3/movie/${movie.alt}${KEY}`
+//   );
+//   const data = await res.json();
+//   wishlist.push(data);
+//   localStorage.setItem("wishlist", JSON.stringify(wishlist));
+// });
 
-containerUpcoming.addEventListener('click', async function(e) {
-    const movie = e.target
-    const res = await fetch(`https://api.themoviedb.org/3/movie/${movie.alt}${KEY}`)
-    const data = await res.json()
-    wishlist.push(data)
-    localStorage.setItem('wishlist', JSON.stringify(wishlist))
-})
-
+// ADD TO WISHLIST
+container.forEach((cont) => {
+  cont.addEventListener("click", async function (e) {
+    const movie = e.target;
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/${movie.alt}${KEY}`
+    );
+    const data = await res.json();
+    wishlist.push(data);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  });
+});

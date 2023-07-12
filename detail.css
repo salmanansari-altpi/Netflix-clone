@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 62.5%;
+}
+
+.container {
+    background-color: #000;
+    height: 100vh;
+}
+
+.wrapper {
+    padding: 1rem 5rem;
+    background-color: #47474742;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar {
+    height: 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    width: 7rem;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.listItem a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.listItem a:hover {
+    opacity: .8;
+}
+
+.details {
+    width: 100%;
+    height: calc(100vh - 5rem);
+    position: relative;
+}
+
+.details iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    width: 100%;
+    height: calc(100vh - 5rem);
+    background-color: #000000a4;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+}
+
+.inner {
+    padding-right: 10rem;
+    position: absolute;
+    left: 10rem;
+    top: 15rem;
+    display: flex;
+    gap: 3rem;
+    color: #fff;
+    z-index: 999;
+}
+
+.left, .right {
+    flex: 1;
+}
+
+.left .title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.left .desc {
+    width: 80%;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.left .languages {
+    font-size: 1rem;
+}
+
+.add {
+    margin-top: 1rem;
+    width: 25%;
+    display: block;
+    padding: 0.7rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.add:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.right .genres {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.right .rating {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.right .status, .revenue {
+    font-size: 1rem;
+    margin: 0 1rem;
+}
+
+.company {
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card span {
+    font-size: 1rem;
+}
+
+.contries ul {
+    list-style: none;
+}
+
+.contries ul li {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
