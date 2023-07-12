@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 62.5%;
+}
+
+.container {
+    background-color: #000;
+}
+
+.wrapper {
+    padding: 1rem 5rem;
+    background-color: #47474742;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar {
+    height: 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    width: 7rem;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.listItem a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.listItem a:hover {
+    opacity: .8;
+}
+
+.hero {
+    height: calc(85vh - 5rem);
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.hero > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.movie-detail {
+    width: 40rem;
+    position: absolute;
+    bottom: 3rem;
+    left: 5rem;
+    color: #fff;
+}
+
+.movie-detail > h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.movie-detail > p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-play {
+    padding: 0.6rem 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-info {
+    padding: 0.6rem 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    background-color: #ffffff86;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-info:hover {
+    background-color: #ffffff65;
+}
+
+/* POPULAR MOVIES */
+.popular, .top-rated, .upcoming {
+    padding-bottom: 1rem;
+}
+
+.wrapper-pop {
+    color: #fff;
+    padding: 0 2rem;
+}
+
+.wrapper-pop > h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.inner {
+    display: flex;
+    gap: 1rem;
+    overflow-x: scroll;
+}
+
+.inner::-webkit-scrollbar {
+    display: none;  
+}
+
+.inner > .card {
+    min-width: 10rem;
+    max-width: 10rem;
+    min-height: 7rem;
+    max-height: 7rem;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.inner > .card:hover {
+    box-shadow: 2px 2px 2px #727272;
+}
+
+.inner > .card > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media ((min-width: 370px) and (max-width: 520px)) {
+    .container {
+        overflow-x: hidden;
+    }
+
+    .logo {
+        width: 5rem;
+    }
+
+    .list {
+        gap: 0.8rem;
+    }
+
+    .listItem a {
+        font-size: 1rem;
+    }
+
+    .wrapper {
+        padding: 1rem;
+    }
+
+    .hero {
+        height: calc(50vh - 5rem);
+    }
+
+    .movie-detail {
+        left: 1rem;
+        bottom: 1rem;
+    }
+}

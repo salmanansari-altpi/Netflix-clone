@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #000;
+    height: 100vh;
+}
+
+.wrapper {
+    padding: 1rem 5rem;
+    background-color: #47474742;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar {
+    height: 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    width: 7rem;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.listItem a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.listItem a:hover {
+    opacity: .8;
+}
+
+.wishlist {}
+
+.inner {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 13rem;
+    height: 14rem;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.detail {
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+@media ((min-width: 370px) and (max-width: 520px)) {
+    .container {
+        overflow-y: scroll;
+    }
+
+    .logo {
+        width: 5rem;
+    }
+
+    .listItem a {
+        font-size: 1rem;
+    }
+
+    .wrapper {
+        padding: 1rem;
+    }
+
+    .inner {
+        justify-content: center;
+    }
+
+    .card {
+        margin-top: 2rem;
+        width: 90%;
+    }
+}
