@@ -61,7 +61,9 @@ function showPopularMovie(container, arrName) {
   arrName.forEach((data) => {
     child.innerHTML += `
     <div class="card" >
-        <img src=${IMAGE_URL + data.poster_path} alt=${data.id}>
+        <a href="detail.html" class="redirect">
+          <img src=${IMAGE_URL + data.poster_path} alt=${data.id}>
+        </a>
     </div>
     `;
   });
@@ -98,6 +100,7 @@ function showPopularMovie(container, arrName) {
 //   localStorage.setItem("wishlist", JSON.stringify(wishlist));
 // });
 
+/*
 // ADD TO WISHLIST
 container.forEach((cont) => {
   cont.addEventListener("click", async function (e) {
@@ -107,6 +110,29 @@ container.forEach((cont) => {
     );
     const data = await res.json();
     wishlist.push(data);
+    console.log(data);
+    // wishlist.push(localStorage.getItem('wishlist'))
+    // localStorage.setItem('wishlist', JSON.stringify(wishlist))
+    const demo = JSON.parse(localStorage.getItem("wishlist"));
+    console.log(demo);
+    demo?.forEach((x) => {
+      wishlist.push(x);
+      console.log(x);
+    });
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
   });
 });
+*/
+
+// REDIRECT TO DETAIL PAGE
+container.forEach(con => {
+  con.addEventListener('click', async function(e) {
+    const movie = e.target
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/${movie.alt}${KEY}`
+    );
+    const data = await res.json();
+    localStorage.removeItem('movie')
+    localStorage.setItem('movie', JSON.stringify(data))
+  })
+})

@@ -25,7 +25,7 @@ function showAccordian () {
                 <p>${item.answer}</p>
             </div>
         </div>
-    `
+        `
     })
 }
 

@@ -17,3 +17,13 @@ const showWishlist = (list) => {
 }
 
 showWishlist(wishlist)
+
+container.addEventListener('click', function(e) {
+    const movie = e.target
+    console.log(movie.alt);
+    const demo = wishlist.filter(data => data.id !== +movie.alt)
+    console.log(demo);
+    localStorage.setItem('wishlist', JSON.stringify(demo))
+    showWishlist(demo)
+    location.reload()
+})
